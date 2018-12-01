@@ -1,0 +1,35 @@
+FROM chemberlen/ubuntu1:v1
+
+#RUN mkdir -p /home/teofedryn/www && groupadd -r teofedryn --gid=1000 && useradd -r -g teofedryn --uid=1000 teofedryn
+
+WORKDIR /home/www
+
+#COPY requirements.txt requirements.txt
+
+COPY . /home/www
+
+RUN apt-get update && apt-get install -y python3-venv && python3 -m venv venv
+
+RUN venv/bin/pip install -r requirements.txt
+#
+##RUN chown -R teofedryn:teofedryn .
+#
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+#ENV FLASK_APP=start.py
+
+#USER teofedryn
+
+#VOLUME . : /home/teofedryn/www
+
+#CMD ["~/www/venv/bin/python","~/www/start.py"]
+CMD ["/bin/bash"]
+
+
+/C/Users/chemberlen/PycharmProjects/FlaskApp/www
+
+===========================================================
+
+flask-wtf
+flask_sqlalchemy
+flask-migrate

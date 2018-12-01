@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: chemberlen/ubuntu-python-new:v2
+    ports:
+     - "8888:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: "redis:alpine"
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
