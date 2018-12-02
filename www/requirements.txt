@@ -2,3 +2,4 @@ flask
 flask-wtf
 flask_sqlalchemy
 flask-migrate
+flask-login

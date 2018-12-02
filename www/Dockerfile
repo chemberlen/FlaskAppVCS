@@ -22,6 +22,10 @@ USER teofedryn
 
 CMD ["/bin/bash"]
 
+
+
+#CMD ["/home/teofedryn/www/venv/bin/activate"]
+
 #RUN python -m venv venv
 #RUN venv/bin/pip install -r requirements.txt
 #RUN venv/bin/pip install gunicorn
