@@ -4,13 +4,13 @@ RUN groupadd -r teofedryn --gid=1000 && useradd -r -g teofedryn --uid=1000 teofe
 
 RUN apt-get update && apt-get install -y python3 && apt-get install -y python3-venv && apt-get install python-pip -y
 
-WORKDIR home/teofedryn/www
+WORKDIR home/teofedryn/www/start
 
 COPY . ./
 
 RUN python3 -m venv venv
 
-ENV FLASK_APP start/start.py
+ENV FLASK_APP start.py
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 

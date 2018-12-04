@@ -1,7 +1,6 @@
-import os
-from .FlaskApp import app, db
+from FlaskApp import app, db
 
-from .FlaskApp.models import User, Post
+from FlaskApp.models import User, Post
 
 @app.shell_context_processor
 def make_shell_context():
