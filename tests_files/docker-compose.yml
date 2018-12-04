@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    build: .
+    build: ../www
     image: chemberlen/ubuntu-python-new:v2
     ports:
      - "8888:5000"
