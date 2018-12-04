@@ -9,16 +9,16 @@ WORKDIR home/teofedryn/www
 COPY requirements.txt ./
 COPY ./start ./start
 
-#RUN python3 -m venv venv
-#
-#ENV FLASK_APP=./start.py
-#ENV FLASK_ENV=development
-#ENV LANG=C.UTF-8
-#ENV LC_ALL=C.UTF-8
-#
-#RUN venv/bin/pip install -r requirements.txt
-#
-#RUN chown -R teofedryn:teofedryn ./
+RUN python3 -m venv venv
+
+ENV FLASK_APP=./start.py
+ENV FLASK_ENV=development
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+RUN venv/bin/pip install -r requirements.txt
+
+RUN chown -R teofedryn:teofedryn ./
 
 USER teofedryn
 
