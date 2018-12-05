@@ -33,3 +33,30 @@ CMD ["/bin/bash"]
 flask-wtf
 flask_sqlalchemy
 flask-migrate
+
+
+==================
+
+
+u = User(username='', email='@')
+p = Post(body='',author=u)
+
+db.session.add(u)
+db.session.commit()
+
+======adding posts==========
+u = User.query.get(1)
+p = Post(body='my first post!', author=u)
+db.session.add(p)
+db.session.commit()
+
+========clear database================
+users = User.query.all()
+for u in users:
+...     db.session.delete(u)
+...
+posts = Post.query.all()
+for p in posts:
+...     db.session.delete(p)
+...
+db.session.commit()
